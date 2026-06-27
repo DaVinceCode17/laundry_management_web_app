@@ -17,7 +17,6 @@
     </properties>
 
     <dependencies>
-        <!-- ===== SERVLET API ===== -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -25,7 +24,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- ===== JSP API ===== -->
         <dependency>
             <groupId>jakarta.servlet.jsp</groupId>
             <artifactId>jakarta.servlet.jsp-api</artifactId>
@@ -33,26 +31,24 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- ===== JSTL ===== -->
         <dependency>
             <groupId>jakarta.servlet.jsp.jstl</groupId>
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
             <version>3.0.0</version>
         </dependency>
+        
         <dependency>
             <groupId>org.glassfish.web</groupId>
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
             <version>3.0.1</version>
         </dependency>
 
-        <!-- ===== MYSQL DRIVER (LOCAL) ===== -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <version>8.2.0</version>
         </dependency>
 
-        <!-- ===== POSTGRESQL DRIVER (RAILWAY) ===== -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
@@ -63,26 +59,14 @@
     <build>
         <finalName>laundry-management</finalName>
         <plugins>
-            <!-- ===== MAVEN WAR PLUGIN ===== -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.4.0</version>
                 <configuration>
-                    <!-- Exclude context.xml para sa Railway -->
-                    <webResources>
-                        <resource>
-                            <directory>src/main/webapp</directory>
-                            <excludes>
-                                <exclude>META-INF/context.xml</exclude>
-                            </excludes>
-                        </resource>
-                    </webResources>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
-
-            <!-- ===== MAVEN COMPILER PLUGIN ===== -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
